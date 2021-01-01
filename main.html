@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>民科体生成器</title>
+  
+  
+  <link rel='stylesheet' href='https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.css'>
+  
+<style>
+textarea {
+    resize: none;
+    overflow: hidden;
+    width: 100%;
+    min-height: 50px;
+}
+lable {
+    font-weight: bold;
+}
+
+#footer {
+    text-align: center;
+}
+button {
+    margin-bottom: 10px;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <body onload="onload()">
+    <div class="container">
+        <h1>民科体生成器</h1>
+        <div class="row">
+            <div class="col-sm-5 col-xs-12">
+                <form action="javascript:void(0);" autocomplete="off">
+                    <div class="form-group">
+                        <lable for="subject">主体：</lable>
+                        <input type="text" id="subject" class="form-control" placeholder="电磁炮" required />
+                    </div>
+                    <div class="form-group">
+                        <lable for="event">主体描述：</lable>
+                        <input type="text" id="event" class="form-control" placeholder="磁阻电磁炮" required />
+                    </div>
+                    <div class="form-group">
+                        <lable for="event2">主题的一种应用：</lable>
+                        <input type="text" id="event2" class="form-control" placeholder="上太空" required />
+                    </div>
+                    <div class="form-group">
+                        <lable for="exp1">一种实验结果：</lable>
+                        <input type="text" id="exp1" class="form-control" placeholder="发几个钢钉" required />
+                    </div>
+                     <div class="form-group">
+                        <lable for="exp2">另一种实验成果：</lable>
+                        <input type="text" id="exp2" class="form-control" placeholder="搞几个实验" required />
+                    </div>
+                    <input type="submit" value="生成" class="btn btn-primary" onclick="generate()" />
+                </form>
+            </div>
+            <div class="col-sm-7 col-xs-12">
+                <textarea id="result" onchange="auto_grow(this)" oninput="auto_grow(this)"
+                    placeholder="电磁炮商业应用四大领域： 
+1.军工 
+2.太空 
+3.工业4.0 
+4.矿山开采 
+
+那么电磁炮技术开发到那一步了呢？
+
+科创玩的最多的磁阻电磁炮，如有资本加持能升级到哪种应用场景？
+
+科研的目的是为了应用，美国和欧洲洋鬼子们，以及日本鬼子在电磁炮领域鼓捣什么应用，除了军火这种特牛掰的东西。
+
+科创论坛的电磁炮，如何在小型和中型化研发上与我军方大神级研发相媲美？
+
+说一千道一万，现实应用才是推进剂啊！不能再停留在发几个钢钉、搞几个实验就心满意足的状态了，恐被鬼子们抛在身后，带给咱们无尽的遗憾与羞耻……
+
+来吧，看看咋搞？即使小鱼小虾米们也都统统蹦出来，透透气儿，水底逐渐发烫，有海底火山似要爆发，得赶紧想想策略，羽化成仙时机一到！
+
+再等下去，恐统统变化石，傻眼的不止小虾，更有大鲸鱼，一群草寇看能鼓捣出些啥……
+
+电磁炮上太空？先歇歇吧！小鸟枪能跟工业4.0搭上边儿，估计也可以昆虫变神仙，不是太虚弱，资本太现实，不被一枪挑下马，就是万幸万幸万万幸……
+
+其实电磁炮上太空最牛！可如果电磁炮是孙猴子，他手里最缺的就是金箍棒，万般皆下品，唯有这根棒！可定海神针在哪里吆？嘿嘿～～叫我老孙找到，赶快把它变成棒儿，哈哈（此处大笑不止……）
+
+呜呜呜……`"></textarea>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div id="footer">
+        Made by: paclab
+        <br />
+    </div>
+</body>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  
+      <script id="rendered-js" >
+function auto_grow(element) {
+  element.style.height = "5px";
+  element.style.height = element.scrollHeight + "px";
+}
+
+function onload() {
+  auto_grow(document.getElementById("result"));
+}
+
+function generate() {
+  subject = document.getElementById("subject").value;
+  event = document.getElementById("event").value;
+  event2 = document.getElementById("event2").value;
+  exp1 = document.getElementById("exp1").value;
+  exp2 = document.getElementById("exp2").value;
+  if (subject.length == 0 || event.length == 0 || event2.length == 0 || exp1.length == 0 || exp2.length == 0)
+  return;
+  result = `${subject}商业应用四大领域：\n 1.军工 \n 2.太空 \n 3.工业4.0 \n 4.矿山开采 \r\n
+
+那么${subject}技术开发到那一步了呢？\r\n
+
+科创玩的最多的${event}，如有资本加持能升级到哪种应用场景？\r\n
+
+科研的目的是为了应用，美国和欧洲洋鬼子们，以及日本鬼子在${event}领域鼓捣什么应用，除了军火这种特牛掰的东西。\r\n
+
+科创论坛的${event}，如何在小型和中型化研发上与我军方大神级研发相媲美？\r\n
+
+说一千道一万，现实应用才是推进剂啊！不能再停留在${exp1}、${exp2}就心满意足的状态了，恐被鬼子们抛在身后，带给咱们无尽的遗憾与羞耻……\r\n
+
+来吧，看看咋搞？即使小鱼小虾米们也都统统蹦出来，透透气儿，水底逐渐发烫，有海底火山似要爆发，得赶紧想想策略，羽化成仙时机一到！\r\n
+
+再等下去，恐统统变化石，傻眼的不止小虾，更有大鲸鱼，一群草寇看能鼓捣出些啥……\r\n
+
+${subject}${event2}？先歇歇吧！小鸟枪能跟工业4.0搭上边儿，估计也可以昆虫变神仙，不是太虚弱，资本太现实，不被一枪挑下马，就是万幸万幸万万幸……\r\n
+
+其实${subject}${event2}最牛！可如果${subject}是孙猴子，他手里最缺的就是金箍棒，万般皆下品，唯有这根棒！可定海神针在哪里吆？嘿嘿～～叫我老孙找到，赶快把它变成棒儿，哈哈（此处大笑不止……）\r\n
+
+呜呜呜……`;
+  document.getElementById("result").value = result;
+  auto_grow(document.getElementById("result"));
+}
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
